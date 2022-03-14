@@ -6,3 +6,9 @@ publish:
 
 lint:
 	npx eslint . --fix
+
+jest:
+	npx jest
+
+coverage:
+	npx jest --coverage
