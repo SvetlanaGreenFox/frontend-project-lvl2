@@ -1,4 +1,13 @@
-install:
+run:
+	bin/nodejs-package.js 10
+
+test:
+	npm test
+
+test-coverage:
+	npm test -- --coverage --coverageProvider=v8
+
+install-deps:
 	npm ci
 
 publish: 
@@ -10,5 +19,7 @@ lint:
 jest:
 	npx jest
 
-coverage:
-	npx jest --coverage
+test-coverage:
+	npm test -- --coverage --coverageProvider=v8
+
+.PHONY: test
