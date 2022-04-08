@@ -18,16 +18,7 @@ const genDiff = (file1, file2) => {
 
   const result = [];
 
-  let length = 0;
-  if (keysFile1.length > keysFile2.length) {
-    length = keysFile1.length;
-  } else if (keysFile1.length < keysFile2.length) {
-    length = keysFile2.length;
-  } else {
-    length = keysFile1.length;
-  }
-
-  for (let i = 0; i <= length; i += 1) {
+  for (let i = 0; i <= uniqKeys.length; i += 1) {
     const elem = uniqKeys[i];
 
     if (Object.hasOwn(file1Data, elem) && !Object.hasOwn(file2Data, elem)) {

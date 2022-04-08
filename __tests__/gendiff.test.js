@@ -23,7 +23,6 @@ test('gendiffTest', () => {
   ];
 
   const expected = ['{', ...data, '}'].join('\n');
-  // console.log(expected);
 
   expect(genDiff(pathToFile1, pathToFile2)).toBe(expected);
 });
