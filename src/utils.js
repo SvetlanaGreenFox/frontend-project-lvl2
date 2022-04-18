@@ -1,11 +1,15 @@
+import _ from 'lodash';
 import * as path from 'path';
 import { readFileSync } from 'fs';
-import _ from 'lodash';
+import parse from './parsers.js';
+
+const prepareData = (file) => readFileSync(path.resolve(file));
 
 const getData = (file) => {
-  const pathFile = path.resolve(file);
+  const readyData = prepareData(file);
+  const parseMethod = parse(file);
 
-  return JSON.parse(readFileSync(pathFile));
+  return parseMethod(readyData);
 };
 
 const genDiff = (file1, file2) => {
